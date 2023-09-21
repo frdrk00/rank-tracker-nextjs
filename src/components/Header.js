@@ -1,5 +1,5 @@
 import LogoutLink from '@/components/LogoutLink'
-import { authOptions } from './api/auth/[...nextauth]/route'
+import { authOptions } from '../app/api/auth/[...nextauth]/route'
 import { getServerSession } from 'next-auth'
 
 const Header = async () => {
@@ -7,7 +7,7 @@ const Header = async () => {
   const user = session?.user
 
   return (
-    <header className="max-w-lg mx-auto my-4 flex items-center justify-between">
+    <header className="my-4 flex items-center justify-between">
       <a
         className="text-3xl font-bold bg-gradient-to-r to-blue-600 from-indigo-900 text-transparent bg-clip-text"
         href=""

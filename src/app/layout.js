@@ -3,9 +3,9 @@ import { Inter } from 'next/font/google'
 
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
-import LoginScreen from './LoginScreen'
+import LoginScreen from '../components/LoginScreen'
 
-import Header from './Header'
+import Header from '../components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,10 +23,10 @@ export default async function RootLayout({ children }) {
         {!session ? (
           <LoginScreen />
         ) : (
-          <>
+          <div className='max-w-lg mx-auto '>
             <Header />
             {children}
-          </>
+          </div>
         )}
       </body>
     </html>
