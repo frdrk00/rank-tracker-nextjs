@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth'
 const Header = async () => {
   const session = await getServerSession(authOptions)
   const user = session?.user
+  // console.log(user.image)
 
   return (
     <header className="my-4 flex items-center justify-between">
@@ -17,7 +18,7 @@ const Header = async () => {
       <div className="flex items-center gap-2 bg-slate-300 p-1 rounded-full">
         <img
           src={user?.image}
-          alt="Profile Image"
+          alt=""
           className="h-12 rounded-full"
         />
         <div className="pr-4 leading-5">
